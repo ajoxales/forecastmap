@@ -32,6 +32,7 @@ function initMap() {
 				console.log(data); // Do whatever you need with the data
 				loc = data.location.name;
 				region = data.location.region;
+				country = data.location.country;
 
 				function getCurrentDay(dataDate) {
 					let date = new Date(dataDate);
@@ -89,7 +90,7 @@ function initMap() {
 				function revealElement() {
 					var element = document.getElementById("details");
 					document.getElementById("city").textContent =
-						loc + ", " + region;
+						loc + ", " + country;
 					element.style.display = "block";
 				}
 
