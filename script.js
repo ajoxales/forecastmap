@@ -19,7 +19,7 @@ function initMap() {
 		const long = parseFloat(event.latLng.lng());
 		let loc = "";
 
-		const apiKey = "aff7907d4c64454698b104900230507";
+		const apiKey = "68a3b0f6453042d6a12142704230607";
 
 		// Construct the API URL with parameters
 		const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat},${long}&days=7`;
