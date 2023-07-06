@@ -22,7 +22,7 @@ function initMap() {
 		const apiKey = "aff7907d4c64454698b104900230507";
 
 		// Construct the API URL with parameters
-		const url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat},${long}&days=7`;
+		const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${lat},${long}&days=7`;
 
 		// Fetch weather data
 		fetch(url)
