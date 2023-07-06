@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>ForecastMap</title>
+		<link rel="icon" type="image/x-icon" href="map.png" />
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: "Poppins", sans-serif;
+			}
+
+			#map {
+				height: 600px;
+				width: 100%;
+			}
+			#title {
+				font-family: "Poppins", sans-serif;
+				font-size: 21px;
+				font-weight: 600;
+			}
+
+			#container {
+				position: absolute;
+				bottom: 30px;
+				width: auto;
+				border-radius: 5px;
+				padding: 30px;
+			}
+
+			#details {
+				position: absolute;
+				font-size: 12px;
+				display: none;
+				font-family: "Inter", sans-serif;
+				z-index: 1000;
+				bottom: 5px;
+				width: auto;
+			}
+
+			#city {
+				color: rgb(11, 34, 57);
+				font-weight: 600;
+			}
+
+			#temp0 {
+				color: rgb(3, 77, 103);
+			}
+			#map {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+			}
+
+			#navbar {
+				width: 100%;
+				z-index: 1000;
+			}
+		</style>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+			crossorigin="anonymous" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap"
+			rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+	</head>
+	<body>
+		<nav
+			id="navbar"
+			class="navbar navbar-expand-lg navbar-dark py-2"
+			style="background-color: rgb(11, 34, 57)">
+			<div class="container d-flex justify-content-center">
+				<i class="navbar-brand"
+					><img src="map.png" alt="icon" width="32px"
+				/></i>
+				<span id="title" class="text-light">ForecastMap</span>
+			</div>
+		</nav>
+
+		<div class="container-map"><div id="map"></div></div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<div
+					id="details"
+					class="container-sm bg-light bg-gradient p-1 m-2 rounded-2">
+					<div
+						class="text-secondary-emphasis border-bottom mb-2 ms-2">
+						7-DAY FORECAST
+					</div>
+
+					<div
+						class="d-flex justify-content-between border-bottom mb-1">
+						<div class="ms-2 pe-4">
+							<div id="city" class="fs-6 my-0 py-0">
+								<i class="bi-geo-alt-fill"></i>
+								Dasmarinas, Cavite
+							</div>
+							<img
+								id="icon0"
+								src="/116.png"
+								alt="day"
+								width="70px"
+								class="mb-2" />
+						</div>
+						<div class="me-2 ps-4">
+							<div id="day0" class="text-end text-secondary">
+								Today
+							</div>
+							<div class="justify-content-end">
+								<div id="temp0" class="fs-1 text-end fw-500">
+									29.3C
+								</div>
+								<div id="highlow" class="text-end">
+									34 / 25.1
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="d-flex justify-content-center accordion-item">
+						<h2 class="accordion-header">
+							<button
+								class="accordion-button collapsed d-md-none"
+								type="button"
+								data-bs-toggle="collapse"
+								data-bs-target="#collapseTwo"
+								aria-expanded="false"
+								aria-controls="collapseTwo">
+								<i
+									class="text-secondary bi-chevron-compact-down"></i>
+							</button>
+						</h2>
+					</div>
+
+					<!--WEATHER FORECAST-->
+					<div
+						id="collapseTwo"
+						class="container accordion-collapse collapse d-md-block"
+						data-bs-parent="#accordionExample">
+						<div class="row">
+							<div class="col bg-body-secondary m-1 rounded-2">
+								<div
+									class="d-flex flex-lg-column flex-md-column align-items-center p-1 order-sm-0">
+									<div
+										id="day1"
+										class="flex-fill fw-medium text-secondary-emphasis me-2">
+										Tomorrow
+									</div>
+									<div
+										class="order-last order-sm-last order-md-1">
+										<img
+											id="icon1"
+											src="/116.png"
+											alt="day"
+											width="35px" />
+									</div>
+									<div
+										id="temp1"
+										class="text-lg-center text-sm-end order-sm-2 text-secondary mx-2">
+										29.3
+									</div>
+								</div>
+							</div>
+							<div class="col bg-body-secondary m-1 rounded-2">
+								<div
+									class="d-flex flex-lg-column flex-md-column align-items-center p-1 order-sm-0">
+									<div
+										id="day2"
+										class="flex-fill fw-medium text-secondary-emphasis me-2"></div>
+									<div
+										class="order-last order-sm-last order-md-1">
+										<img
+											id="icon2"
+											src="/116.png"
+											alt="day"
+											width="35px" />
+									</div>
+									<div
+										id="temp2"
+										class="text-lg-center text-sm-end order-sm-2 text-secondary mx-2">
+										29.3
+									</div>
+								</div>
+							</div>
+							<div class="col bg-body-secondary m-1 rounded-2">
+								<div
+									class="d-flex flex-lg-column flex-md-column align-items-center p-1 order-sm-0">
+									<div
+										id="day3"
+										class="flex-fill fw-medium text-secondary-emphasis me-2">
+										Tomorrow
+									</div>
+									<div
+										class="order-last order-sm-last order-md-1">
+										<img
+											id="icon3"
+											src="/116.png"
+											alt="day"
+											width="35px" />
+									</div>
+									<div
+										id="temp3"
+										class="text-lg-center text-sm-end order-sm-2 text-secondary mx-2">
+										29.3
+									</div>
+								</div>
+							</div>
+							<div class="col bg-body-secondary m-1 rounded-2">
+								<div
+									class="d-flex flex-lg-column flex-md-column align-items-center p-1 order-sm-0">
+									<div
+										id="day4"
+										class="flex-fill fw-medium text-secondary-emphasis me-2">
+										Tomorrow
+									</div>
+									<div
+										class="order-last order-sm-last order-md-1">
+										<img
+											id="icon4"
+											src="/116.png"
+											alt="day"
+											width="35px" />
+									</div>
+									<div
+										id="temp4"
+										class="text-lg-center text-sm-end order-sm-2 text-secondary mx-2">
+										29.3
+									</div>
+								</div>
+							</div>
+							<div class="col bg-body-secondary m-1 rounded-2">
+								<div
+									class="d-flex flex-lg-column flex-md-column align-items-center p-1 order-sm-0">
+									<div
+										id="day5"
+										class="flex-fill fw-medium text-secondary-emphasis me-2">
+										Tomorrow
+									</div>
+									<div
+										class="order-last order-sm-last order-md-1">
+										<img
+											id="icon5"
+											src="/116.png"
+											alt="day"
+											width="35px" />
+									</div>
+									<div
+										id="temp5"
+										class="text-lg-center text-sm-end order-sm-2 text-secondary mx-2">
+										29.3
+									</div>
+								</div>
+							</div>
+							<div class="col bg-body-secondary m-1 rounded-2">
+								<div
+									class="d-flex flex-lg-column flex-md-column align-items-center p-1 order-sm-0">
+									<div
+										id="day6"
+										class="flex-fill fw-medium text-secondary-emphasis me-2">
+										Tomorrow
+									</div>
+									<div
+										class="order-last order-sm-last order-md-1">
+										<img
+											id="icon6"
+											src="/116.png"
+											alt="day"
+											width="35px" />
+									</div>
+									<div
+										id="temp6"
+										class="text-lg-center text-sm-end order-sm-2 text-secondary mx-2">
+										29.3
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjoogJgLV7u5L_w-yotaxTh-qbEQZoND0&callback=initMap"
+			async
+			defer></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+			crossorigin="anonymous"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
