@@ -89,8 +89,13 @@ function initMap() {
 
 				function revealElement() {
 					var element = document.getElementById("details");
-					document.getElementById("city").textContent =
-						loc + ", " + country;
+					if (region == "") {
+						document.getElementById("city").textContent =
+							loc + ", " + country;
+					} else {
+						document.getElementById("city").textContent =
+							loc + ", " + region;
+					}
 					element.style.display = "block";
 				}
 
