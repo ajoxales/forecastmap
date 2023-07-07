@@ -1,0 +1,55 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+#title {
+	font-family: "Poppins", sans-serif;
+	font-size: 21px;
+	font-weight: 600;
+}
+
+#container {
+	position: absolute;
+	bottom: 30px;
+	width: auto;
+	border-radius: 5px;
+	padding: 30px;
+}
+
+#details {
+	position: absolute;
+	font-size: 12px;
+	display: none;
+	font-family: "Inter", sans-serif;
+	z-index: 1000;
+	bottom: 5px;
+	width: auto;
+}
+
+#city {
+	color: rgb(11, 34, 57);
+	font-weight: 600;
+}
+
+#temp0 {
+	color: rgb(3, 77, 103);
+}
+#map {
+	position: absolute;
+	width: 100%;
+	height: 92vh;
+}
+
+#navbar {
+	width: 100%;
+	z-index: 1000;
+}
+
+@media only screen and (max-width: 375px) {
+	#details {
+		width: 95%;
+		padding-right: 100px;
+	}
+}
