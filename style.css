@@ -24,8 +24,8 @@
 	display: none;
 	font-family: "Inter", sans-serif;
 	z-index: 1000;
-	bottom: 5px;
 	width: auto;
+	bottom: 1px;
 }
 
 #city {
@@ -33,11 +33,16 @@
 	font-weight: 600;
 }
 
+#footer {
+	background-color: rgb(11, 34, 57);
+	font-size: 15px;
+}
+
 #temp0 {
 	color: rgb(3, 77, 103);
 }
+
 #map {
-	position: absolute;
 	width: 100%;
 	height: 92vh;
 }
@@ -45,6 +50,10 @@
 #navbar {
 	width: 100%;
 	z-index: 1000;
+}
+
+li a i:hover {
+	color: rgb(208, 208, 208);
 }
 
 @media only screen and (max-width: 375px) {
